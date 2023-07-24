@@ -1,15 +1,15 @@
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
-  name: label.<panda_name>-auth
-  namespace: <panda_name>
+  name: label.panda_name-auth
+  namespace: panda_name
 spec:
   selector:
     matchLabels:
-      app: label.<panda_name>
+      app: label.panda_name
   action: CUSTOM
   provider:
-    name: opa.<provider_name>
+    name: opa.provider_name
   rules:
   - to:
     - operation:
